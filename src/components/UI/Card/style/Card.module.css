@@ -1,0 +1,45 @@
+@-webkit-keyframes intro {
+  0% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes intro {
+  0% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.card {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.146);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.146);
+  width: 20vh;
+  height: 250px;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  background: white;
+  margin-left: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: intro 0.2s ease-in;
+          animation: intro 0.2s ease-in;
+}
+
+.card:active {
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+}
+/*# sourceMappingURL=Card.module.css.map */

@@ -1,0 +1,18 @@
+@import '../../../../style/reusable-files/animation';
+
+.card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.146);
+    width: 20vh;
+    height: 250px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    background: white;
+    margin-left: 3em;
+    display: flex;
+
+    animation: intro 0.2s ease-in;
+    &:active {
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
+    }
+}

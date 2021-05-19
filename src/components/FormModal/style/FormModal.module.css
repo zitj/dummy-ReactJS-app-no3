@@ -1,0 +1,49 @@
+.form {
+  padding: 2.7em 2em;
+}
+
+.form label,
+.form input {
+  display: block;
+}
+
+.form input {
+  width: 90%;
+  padding: 0.4em;
+  margin-bottom: 10px;
+}
+
+.form button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form button:nth-of-type(1) {
+  background: #00ac09;
+  color: white;
+  padding: 0.5em 2em;
+  margin-right: 5px;
+}
+
+.form button:nth-of-type(1):hover {
+  opacity: 0.9;
+}
+
+.form button:nth-of-type(1):active {
+  opacity: 1;
+}
+
+.form button:nth-of-type(2) {
+  background: transparent;
+  border: 1px solid #ff4343;
+  color: #ff4343;
+  padding: 0.5em 0.44em;
+}
+
+.form button:nth-of-type(2):hover {
+  background: #ff4343;
+  color: white;
+}
+/*# sourceMappingURL=FormModal.module.css.map */
