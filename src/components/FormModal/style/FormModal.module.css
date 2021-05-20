@@ -15,11 +15,11 @@
 }
 
 .form input.error {
-  border: 1px solid red;
+  border: 1px solid #ff4747;
 }
 
 .form label.error {
-  color: red;
+  color: #ff4747;
 }
 
 .form button {
@@ -46,13 +46,13 @@
 
 .form button:nth-of-type(2) {
   background: transparent;
-  border: 1px solid #ff4343;
-  color: #ff4343;
+  border: 1px solid #ff4747;
+  color: #ff4747;
   padding: 0.5em 0.44em;
 }
 
 .form button:nth-of-type(2):hover {
-  background: #ff4343;
+  background: #ff4747;
   color: white;
 }
 /*# sourceMappingURL=FormModal.module.css.map */

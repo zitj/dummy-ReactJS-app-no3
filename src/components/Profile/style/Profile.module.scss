@@ -1,3 +1,5 @@
+@import '../../../style/reusable-files/variables';
+
 .profile {
     position: relative;
     .frame {
@@ -12,7 +14,7 @@
     }
     h3 {
         text-align: center;
-        color: #2e2e2e;
+        color: $fontColor;
     }
     .deleteBtn {
         position: absolute;

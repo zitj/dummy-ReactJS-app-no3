@@ -1,3 +1,5 @@
+@import '../../../style/reusable-files/variables';
+
 .form {
     padding: 2.7em 2em;
     label,
@@ -11,10 +13,10 @@
         border: 1px solid black;
     }
     input.error {
-        border: 1px solid red;
+        border: 1px solid $error;
     }
     label.error {
-        color: red;
+        color: $error;
     }
     button {
         border: none;
@@ -22,7 +24,7 @@
         cursor: pointer;
         margin-top: 10px;
         &:nth-of-type(1) {
-            background: rgb(0, 172, 9);
+            background: $submitGreen;
             color: white;
             padding: 0.5em 2em;
             margin-right: 5px;
@@ -35,11 +37,11 @@
         }
         &:nth-of-type(2) {
             background: transparent;
-            border: 1px solid rgb(255, 67, 67);
-            color: rgb(255, 67, 67);
+            border: 1px solid $error;
+            color: $error;
             padding: 0.5em 0.44em;
             &:hover {
-                background: rgb(255, 67, 67);
+                background: $error;
                 color: white;
             }
         }
