@@ -10,10 +10,21 @@ function App() {
             return [{ name: name, url: url, id: Date.now() }, ...prevProfiles];
         });
     };
+
+    const deleteProfile = (id) => {
+        setProfiles((prevData) => {
+            const updatedData = prevData.filter((profile) => profile.id !== id);
+            return updatedData;
+        });
+    };
+
     return (
         <div className="wrapper">
             <AddProfile getNewUserData={getNewUserData}></AddProfile>
-            <ListOfProfiles profiles={profiles}></ListOfProfiles>
+            <ListOfProfiles
+                profiles={profiles}
+                deleteProfile={deleteProfile}
+            ></ListOfProfiles>
         </div>
     );
 }

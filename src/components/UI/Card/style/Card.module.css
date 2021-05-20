@@ -42,4 +42,8 @@
   -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.146);
 }
+
+.card button {
+  cursor: pointer;
+}
 /*# sourceMappingURL=Card.module.css.map */

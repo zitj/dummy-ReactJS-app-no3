@@ -1,21 +1,28 @@
 import React from 'react';
 import styles from './style/ListOfProfiles.module.css';
-import Card from '../UI/Card/Card';
+import Profile from '../Profile/Profile';
 
 const ListOfProfiles = (props) => {
+    const deleteBtnHandler = (id) => {
+        console.log(
+            // `You have deleted ${event.target.parentNode.children[2].innerText}'s profile`
+            `You have deleted profile with id no ${id}`
+        );
+        props.deleteProfile(id);
+    };
+
     return (
         <div className={styles.container}>
             {props.profiles
                 .map((profile) => {
                     return (
-                        <Card key={profile.id}>
-                            <div className={styles.profile}>
-                                <div className={styles.frame}>
-                                    <img src={profile.url} alt="profile-pic" />
-                                </div>
-                                <h3>{profile.name}</h3>
-                            </div>
-                        </Card>
+                        <Profile
+                            key={profile.id}
+                            name={profile.name}
+                            url={profile.url}
+                            id={profile.id}
+                            onDelete={deleteBtnHandler}
+                        ></Profile>
                     );
                 })
                 .reverse()}

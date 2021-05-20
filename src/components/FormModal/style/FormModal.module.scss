@@ -8,6 +8,13 @@
         width: 90%;
         padding: 0.4em;
         margin-bottom: 10px;
+        border: 1px solid black;
+    }
+    input.error {
+        border: 1px solid red;
+    }
+    label.error {
+        color: red;
     }
     button {
         border: none;
