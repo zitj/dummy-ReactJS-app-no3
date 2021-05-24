@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styles from './style/AddProfile.module.css';
 import Card from '../UI/Card/Card';
 import FormModal from '../FormModal/FormModal';
@@ -36,9 +36,9 @@ const AddProfile = (props) => {
     }
 
     return (
-        <div>
+        <Fragment>
             <Card>{cardContent}</Card>
-        </div>
+        </Fragment>
     );
 };
 

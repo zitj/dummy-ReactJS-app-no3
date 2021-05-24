@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styles from './style/FormModal.module.css';
 
 const FormModal = (props) => {
@@ -26,7 +26,7 @@ const FormModal = (props) => {
     };
 
     return (
-        <div>
+        <Fragment>
             <form action="submit" onSubmit={addNewUser} className={styles.form}>
                 <div className="actual-input">
                     <label
@@ -59,7 +59,7 @@ const FormModal = (props) => {
                 <button type="submit">Add</button>
                 <button onClick={props.hideForm}>Cancel</button>
             </form>
-        </div>
+        </Fragment>
     );
 };
 
