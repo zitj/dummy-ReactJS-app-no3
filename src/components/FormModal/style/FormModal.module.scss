@@ -1,15 +1,26 @@
 @import '../../../style/reusable-files/variables';
+@import '../../../style/reusable-files/animation';
 
 .form {
-    padding: 2.7em 2em;
+    padding: 2em 2em;
     label,
     input {
         display: block;
     }
+    .proba {
+        color: red;
+        margin: 0;
+        font-size: 0.7em;
+        position: absolute;
+        animation: introError 0.2s ease-in-out;
+    }
+    .actual-input {
+        margin-bottom: 1.6em;
+    }
     input {
         width: 90%;
         padding: 0.4em;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         border: 1px solid black;
     }
     input.error {

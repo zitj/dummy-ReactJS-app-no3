@@ -1,5 +1,45 @@
+@-webkit-keyframes intro {
+  0% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes intro {
+  0% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes introError {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes introError {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .form {
-  padding: 2.7em 2em;
+  padding: 2em 2em;
 }
 
 .form label,
@@ -7,10 +47,23 @@
   display: block;
 }
 
+.form .proba {
+  color: red;
+  margin: 0;
+  font-size: 0.7em;
+  position: absolute;
+  -webkit-animation: introError 0.2s ease-in-out;
+          animation: introError 0.2s ease-in-out;
+}
+
+.form .actual-input {
+  margin-bottom: 1.6em;
+}
+
 .form input {
   width: 90%;
   padding: 0.4em;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border: 1px solid black;
 }
 
