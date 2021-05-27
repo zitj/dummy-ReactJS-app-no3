@@ -1,4 +1,11 @@
-import React, { useState, Fragment, useEffect, useReducer } from 'react';
+import React, {
+    useState,
+    Fragment,
+    useEffect,
+    useReducer,
+    useContext,
+} from 'react';
+import NewProfileContext from '../../context/new-profile-context';
 import styles from './style/FormModal.module.css';
 
 const nameReducer = (state, action) => {
@@ -21,6 +28,8 @@ const urlReducer = (state, action) => {
 };
 
 const FormModal = (props) => {
+    const newProfileContext = useContext(NewProfileContext);
+
     const [isFormValid, setIsFormValid] = useState(null);
 
     const [nameState, dispatchName] = useReducer(nameReducer, {
@@ -37,7 +46,6 @@ const FormModal = (props) => {
 
     useEffect(() => {
         const indetifier = setTimeout(() => {
-            console.log(isEnteredNameValid, isEnteredURLValid);
             setIsFormValid(isEnteredNameValid && isEnteredURLValid);
         }, 200);
 
@@ -51,11 +59,10 @@ const FormModal = (props) => {
 
         if (!isFormValid) {
             if (isEnteredNameValid === null && isEnteredURLValid === null) {
-                console.log('Nisi nista napisao');
             }
             return;
         } else {
-            props.getNewUserData(nameState.value, urlState.value);
+            newProfileContext.onCreate(nameState.value, urlState.value);
             props.hideForm();
         }
     };
@@ -69,7 +76,6 @@ const FormModal = (props) => {
 
     const validateNameHandler = (event) => {
         dispatchName({ type: 'INPUT_BLUR', val: event.target.value });
-        console.log('This thang blured yo');
     };
 
     const enterURLHandler = (event) => {

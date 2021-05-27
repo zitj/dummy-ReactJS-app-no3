@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './style/ListOfProfiles.module.css';
 import Profile from '../Profile/Profile';
+import NewProfileContext from '../../context/new-profile-context';
 
 const ListOfProfiles = (props) => {
-    const deleteBtnHandler = (id) => {
-        console.log(
-            // `You have deleted ${event.target.parentNode.children[2].innerText}'s profile`
-            `You have deleted profile with id no ${id}`
-        );
-        props.deleteProfile(id);
-    };
+    const newProfileContext = useContext(NewProfileContext);
 
     return (
         <div className={styles.container}>
-            {props.profiles
+            {newProfileContext.profiles
                 .map((profile) => {
                     return (
                         <Profile
@@ -21,7 +16,6 @@ const ListOfProfiles = (props) => {
                             name={profile.name}
                             url={profile.url}
                             id={profile.id}
-                            onDelete={deleteBtnHandler}
                         ></Profile>
                     );
                 })
