@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './style/Profile.module.css';
 import Card from '../UI/Card/Card';
+import NewProfileContext from '../../context/new-profile-context';
 
 const Profile = (props) => {
+    const newProfileContext = useContext(NewProfileContext);
+
     const deleteProfile = () => {
-        props.onDelete(props.id);
+        newProfileContext.onDelete(props.id);
     };
 
     return (

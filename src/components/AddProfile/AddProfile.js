@@ -12,17 +12,8 @@ const AddProfile = (props) => {
         return isClicked ? setIsClicked(false) : setIsClicked(true);
     };
 
-    const getNewUserData = (name, url) => {
-        props.getNewUserData(name, url);
-    };
-
     if (isClicked) {
-        cardContent = (
-            <FormModal
-                hideForm={setIsClickedHandler}
-                getNewUserData={getNewUserData}
-            ></FormModal>
-        );
+        cardContent = <FormModal hideForm={setIsClickedHandler}></FormModal>;
     } else {
         cardContent = (
             <div className={styles.content} onClick={setIsClickedHandler}>
