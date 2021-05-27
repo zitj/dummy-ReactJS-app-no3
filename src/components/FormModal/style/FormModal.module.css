@@ -65,6 +65,7 @@
   padding: 0.4em;
   margin-bottom: 5px;
   border: 1px solid black;
+  outline: none;
 }
 
 .form input.error {

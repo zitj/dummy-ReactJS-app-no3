@@ -6,7 +6,7 @@ const nameReducer = (state, action) => {
         return { value: action.val, isValid: action.val.trim().length > 2 };
     }
     if (action.type === 'INPUT_BLUR') {
-        return { value: state.val, isValid: false };
+        return { value: action.val, isValid: action.val.trim().length > 2 };
     }
     return { val: '', isValid: false };
 };
@@ -15,17 +15,12 @@ const urlReducer = (state, action) => {
         return { value: action.val, isValid: action.val.includes('https') };
     }
     if (action.type === 'INPUT_BLUR') {
-        return { value: state.val, isValid: state.val.includes('https') };
+        return { value: action.val, isValid: action.val.includes('https') };
     }
     return { val: '', isValid: false };
 };
 
 const FormModal = (props) => {
-    // const [enteredName, setEnteredName] = useState('');
-    // const [enteredURL, setEnteredURL] = useState('');
-    // const [isEnteredNameValid, setIsEnteredNameValid] = useState(true);
-    // const [isEnteredURLValid, setIsEnteredURLValid] = useState(true);
-
     const [isFormValid, setIsFormValid] = useState(null);
 
     const [nameState, dispatchName] = useReducer(nameReducer, {
@@ -66,24 +61,23 @@ const FormModal = (props) => {
     };
 
     const enterNameHandler = (event) => {
-        // setEnteredName(event.target.value);
-
         dispatchName({
             type: 'USER_INPUT',
             val: event.target.value,
         });
     };
 
-    // const validateNameHandler = () => {
-    //     dispatchName({ type: 'INPUT_BLUR' });
-    // };
+    const validateNameHandler = (event) => {
+        dispatchName({ type: 'INPUT_BLUR', val: event.target.value });
+        console.log('This thang blured yo');
+    };
 
     const enterURLHandler = (event) => {
         dispatchUrl({ type: 'USER_INPUT', val: event.target.value });
     };
-    // const validateUrlHandler = () => {
-    //     dispatchUrl({ type: 'INPUT_BLUR' });
-    // };
+    const validateUrlHandler = (event) => {
+        dispatchUrl({ type: 'INPUT_BLUR', val: event.target.value });
+    };
 
     return (
         <Fragment>
@@ -101,7 +95,7 @@ const FormModal = (props) => {
                         type="text"
                         value={nameState.value}
                         onChange={enterNameHandler}
-                        // onBlur={validateNameHandler}
+                        onBlur={validateNameHandler}
                         className={`${
                             isEnteredNameValid === false ? styles.error : ''
                         }`}
@@ -123,7 +117,7 @@ const FormModal = (props) => {
                         type="text"
                         value={urlState.value}
                         onChange={enterURLHandler}
-                        // onBlur={validateUrlHandler}
+                        onBlur={validateUrlHandler}
                         className={`${
                             urlState.isValid === false ? styles.error : ''
                         }`}
